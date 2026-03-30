@@ -20,9 +20,7 @@
   --card-bg: rgba(245,244,239,0.04);
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
 html { scroll-behavior: smooth; }
-
 body {
   background: var(--black);
   color: var(--white);
@@ -31,8 +29,6 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
 }
-
-/* GRID OVERLAY */
 body::before {
   content: '';
   position: fixed;
@@ -85,10 +81,9 @@ nav {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 8rem 4rem 6rem;
+  padding: 8rem 4rem 14rem;
   z-index: 1;
 }
-
 .hero-eyebrow {
   font-family: 'DM Mono', monospace;
   font-size: 11px;
@@ -100,7 +95,6 @@ nav {
   opacity: 0;
   animation: fadeUp 0.8s ease 0.2s forwards;
 }
-
 .hero-title {
   font-family: 'Bebas Neue', sans-serif;
   font-size: clamp(5rem, 12vw, 11rem);
@@ -111,12 +105,10 @@ nav {
   opacity: 0;
   animation: fadeUp 0.8s ease 0.4s forwards;
 }
-
 .hero-title .accent {
   color: var(--teal);
   display: block;
 }
-
 .hero-sub {
   max-width: 520px;
   font-size: 1.1rem;
@@ -127,12 +119,7 @@ nav {
   opacity: 0;
   animation: fadeUp 0.8s ease 0.6s forwards;
 }
-
-.hero-sub strong {
-  color: var(--white);
-  font-weight: 500;
-}
-
+.hero-sub strong { color: var(--white); font-weight: 500; }
 .hero-actions {
   display: flex;
   align-items: center;
@@ -141,7 +128,6 @@ nav {
   opacity: 0;
   animation: fadeUp 0.8s ease 0.8s forwards;
 }
-
 .btn-primary {
   display: inline-flex;
   align-items: center;
@@ -157,13 +143,9 @@ nav {
   text-transform: uppercase;
   transition: all 0.2s;
 }
-.btn-primary:hover {
-  background: #25c48f;
-  transform: translateY(-2px);
-}
+.btn-primary:hover { background: #25c48f; transform: translateY(-2px); }
 .btn-primary .arrow { transition: transform 0.2s; }
 .btn-primary:hover .arrow { transform: translateX(4px); }
-
 .btn-ghost {
   font-family: 'DM Mono', monospace;
   font-size: 11px;
@@ -178,23 +160,23 @@ nav {
 }
 .btn-ghost:hover { color: var(--white); }
 
-/* STAT TICKER */
+/* STAT BAR */
 .stat-bar {
   position: absolute;
-  bottom: 3rem;
+  bottom: 0;
   left: 0; right: 0;
   display: flex;
-  align-items: center;
-  gap: 0;
+  align-items: stretch;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
-  overflow: hidden;
   opacity: 0;
   animation: fadeIn 1s ease 1.2s forwards;
+  z-index: 2;
+  background: rgba(10,10,8,0.7);
 }
 .stat-item {
   flex: 1;
-  padding: 1.25rem 4rem;
+  padding: 1.5rem 2rem;
   border-right: 1px solid var(--border);
   display: flex;
   flex-direction: column;
@@ -231,16 +213,15 @@ nav {
 .orb-2 {
   width: 400px; height: 400px;
   background: radial-gradient(circle, rgba(201,168,76,0.06) 0%, transparent 70%);
-  bottom: 100px; left: 200px;
+  bottom: 200px; left: 200px;
 }
 
-/* SECTION BASE */
+/* SECTIONS */
 section {
   position: relative;
   z-index: 1;
   padding: 7rem 4rem;
 }
-
 .section-label {
   font-family: 'DM Mono', monospace;
   font-size: 10px;
@@ -256,11 +237,9 @@ section {
 .section-label::before {
   content: '';
   display: block;
-  width: 24px;
-  height: 1px;
+  width: 24px; height: 1px;
   background: var(--teal);
 }
-
 .section-title {
   font-family: 'Bebas Neue', sans-serif;
   font-size: clamp(3rem, 6vw, 5.5rem);
@@ -276,25 +255,19 @@ section {
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
 }
-
 .problema-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 6rem;
   align-items: center;
 }
-
 .problema-text p {
   font-size: 1.05rem;
   color: rgba(245,244,239,0.65);
   margin-bottom: 1.2rem;
   line-height: 1.75;
 }
-.problema-text p strong {
-  color: var(--white);
-  font-weight: 500;
-}
-
+.problema-text p strong { color: var(--white); font-weight: 500; }
 .problema-quote {
   border-left: 2px solid var(--teal);
   padding: 1.5rem 2rem;
@@ -302,18 +275,12 @@ section {
   margin-top: 2rem;
 }
 .problema-quote p {
-  font-family: 'DM Sans', sans-serif;
   font-size: 1.15rem;
   font-style: italic;
   color: var(--white) !important;
   font-weight: 300;
 }
-
-.loss-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1px;
-}
+.loss-list { display: flex; flex-direction: column; gap: 1px; }
 .loss-item {
   display: flex;
   align-items: center;
@@ -323,10 +290,7 @@ section {
   background: var(--card-bg);
   transition: border-color 0.2s, background 0.2s;
 }
-.loss-item:hover {
-  border-color: var(--teal-line);
-  background: var(--teal-glow);
-}
+.loss-item:hover { border-color: var(--teal-line); background: var(--teal-glow); }
 .loss-num {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 2rem;
@@ -334,20 +298,10 @@ section {
   min-width: 70px;
   line-height: 1;
 }
-.loss-text {
-  font-size: 0.9rem;
-  color: rgba(245,244,239,0.7);
-  line-height: 1.5;
-}
-.loss-text strong {
-  display: block;
-  color: var(--white);
-  font-weight: 500;
-  font-size: 0.95rem;
-  margin-bottom: 2px;
-}
+.loss-text { font-size: 0.9rem; color: rgba(245,244,239,0.7); line-height: 1.5; }
+.loss-text strong { display: block; color: var(--white); font-weight: 500; font-size: 0.95rem; margin-bottom: 2px; }
 
-/* SOLUÇÃO — 3 MOMENTOS */
+/* 3 MOMENTOS */
 .momentos-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -356,7 +310,6 @@ section {
   border: 1px solid var(--border);
   margin-top: 4rem;
 }
-
 .momento-card {
   background: var(--black);
   padding: 2.5rem;
@@ -365,7 +318,6 @@ section {
   transition: background 0.3s;
 }
 .momento-card:hover { background: var(--card-bg); }
-
 .momento-card::before {
   content: '';
   position: absolute;
@@ -377,604 +329,118 @@ section {
   transition: transform 0.4s ease;
 }
 .momento-card:hover::before { transform: scaleX(1); }
+.momento-num { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.2em; color: var(--muted); text-transform: uppercase; margin-bottom: 1.5rem; }
+.momento-name { font-family: 'Bebas Neue', sans-serif; font-size: 2.4rem; letter-spacing: 0.05em; color: var(--white); line-height: 1; margin-bottom: 1rem; }
+.momento-emotion { display: inline-block; font-family: 'DM Mono', monospace; font-size: 10px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--teal); border: 1px solid var(--teal-line); padding: 3px 10px; margin-bottom: 1.5rem; }
+.momento-desc { font-size: 0.9rem; color: rgba(245,244,239,0.55); line-height: 1.65; }
 
-.momento-num {
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
-  letter-spacing: 0.2em;
-  color: var(--muted);
-  text-transform: uppercase;
-  margin-bottom: 1.5rem;
-}
-.momento-name {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 2.4rem;
-  letter-spacing: 0.05em;
-  color: var(--white);
-  line-height: 1;
-  margin-bottom: 1rem;
-}
-.momento-emotion {
-  display: inline-block;
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--teal);
-  border: 1px solid var(--teal-line);
-  padding: 3px 10px;
-  margin-bottom: 1.5rem;
-}
-.momento-desc {
-  font-size: 0.9rem;
-  color: rgba(245,244,239,0.55);
-  line-height: 1.65;
-}
-
-/* MÓDULOS */
-.modulos { background: rgba(29,158,117,0.03); }
-
-.modulos-wrapper {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 6rem;
-  align-items: start;
-}
-
-.modulos-nav {
-  position: sticky;
-  top: 6rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1px;
-}
-
-.mod-nav-item {
-  padding: 1rem 1.25rem;
-  border: 1px solid transparent;
-  cursor: pointer;
-  transition: all 0.2s;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-.mod-nav-item:hover, .mod-nav-item.active {
-  border-color: var(--teal-line);
-  background: var(--teal-glow);
-}
-.mod-nav-num {
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
-  color: var(--teal);
-  font-weight: 500;
-}
-.mod-nav-label {
-  font-size: 0.85rem;
-  color: rgba(245,244,239,0.6);
-}
-.mod-nav-item.active .mod-nav-label { color: var(--white); }
-
-.modulos-content { }
-.mod-panel { display: none; }
-.mod-panel.active { display: block; }
-
-.mod-panel-title {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 3.5rem;
-  letter-spacing: 0.03em;
-  color: var(--white);
-  line-height: 1;
-  margin-bottom: 1.5rem;
-}
-.mod-panel-desc {
-  font-size: 1rem;
-  color: rgba(245,244,239,0.6);
-  line-height: 1.75;
-  margin-bottom: 2.5rem;
-  max-width: 560px;
-}
-
-.mod-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 2.5rem;
-}
-.mod-tag {
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  padding: 5px 12px;
-  border: 1px solid var(--teal-line);
-  color: var(--teal);
-  background: var(--teal-glow);
-}
-
-.mod-entrega-title {
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-bottom: 1rem;
-}
-.mod-entrega-list {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.mod-entrega-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-  font-size: 0.9rem;
-  color: rgba(245,244,239,0.7);
-  line-height: 1.5;
-  padding: 0.875rem 1rem;
-  border: 1px solid var(--border);
-}
-.mod-entrega-item::before {
-  content: '→';
-  color: var(--teal);
-  font-family: 'DM Mono', monospace;
-  font-size: 12px;
-  flex-shrink: 0;
-  margin-top: 1px;
-}
-
-/* ROI */
-.roi-section {
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-}
-
-.roi-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1px;
-  background: var(--border);
-  margin-top: 4rem;
-  border: 1px solid var(--border);
-}
-
-.roi-card {
-  background: var(--black);
-  padding: 2.5rem;
-  transition: background 0.2s;
-}
-.roi-card:hover { background: var(--card-bg); }
-
-.roi-val {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 3rem;
-  color: var(--teal);
-  line-height: 1;
-  margin-bottom: 0.5rem;
-}
-.roi-label {
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-bottom: 0.75rem;
-}
-.roi-desc {
-  font-size: 0.85rem;
-  color: rgba(245,244,239,0.5);
-  line-height: 1.5;
-}
-
-.roi-formula {
-  margin-top: 4rem;
-  padding: 2.5rem;
-  border: 1px solid var(--teal-line);
-  background: var(--teal-glow);
-  display: grid;
-  grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
-  gap: 0;
-  align-items: center;
-}
-.rf-item {
-  text-align: center;
-  padding: 1rem;
-}
-.rf-val {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 1.6rem;
-  color: var(--white);
-  line-height: 1;
-  margin-bottom: 4px;
-}
-.rf-label {
-  font-family: 'DM Mono', monospace;
-  font-size: 9px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--teal);
-}
-.rf-op {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 1.8rem;
-  color: var(--muted);
-  text-align: center;
-  padding: 0 0.5rem;
-}
-
-/* ENTREGÁVEIS */
-.entregaveis-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1px;
-  background: var(--border);
-  margin-top: 4rem;
-  border: 1px solid var(--border);
-}
-
-.ent-card {
-  background: var(--black);
-  padding: 2.5rem;
-  transition: background 0.3s;
-  position: relative;
-}
-.ent-card:hover { background: var(--card-bg); }
-.ent-card.featured {
-  border-top: 2px solid var(--teal);
-}
-
-.ent-who {
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--teal);
-  margin-bottom: 1rem;
-}
-.ent-title {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 2rem;
-  letter-spacing: 0.04em;
-  color: var(--white);
-  line-height: 1;
-  margin-bottom: 1rem;
-}
-.ent-desc {
-  font-size: 0.9rem;
-  color: rgba(245,244,239,0.55);
-  line-height: 1.65;
-}
-
-/* EXECUÇÃO TIMELINE */
-.exec-timeline {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0;
-  margin-top: 4rem;
-  border: 1px solid var(--border);
-}
-
-.exec-step {
-  padding: 2rem;
-  border-right: 1px solid var(--border);
-  position: relative;
-}
-.exec-step:last-child { border-right: none; }
-
-.exec-step::after {
-  content: '→';
-  position: absolute;
-  right: -12px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: var(--teal);
-  font-family: 'DM Mono', monospace;
-  font-size: 14px;
-  z-index: 2;
-  background: var(--black);
-  padding: 4px 2px;
-}
-.exec-step:last-child::after { display: none; }
-
-.exec-phase {
-  font-family: 'DM Mono', monospace;
-  font-size: 9px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--teal);
-  margin-bottom: 0.75rem;
-}
-.exec-title {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 1.6rem;
-  color: var(--white);
-  line-height: 1;
-  margin-bottom: 0.75rem;
-}
-.exec-items {
-  font-size: 0.82rem;
-  color: rgba(245,244,239,0.5);
-  line-height: 1.7;
-}
-
-/* IA SECTION */
-.ia-section {
-  background: var(--card-bg);
-  border-top: 1px solid var(--border);
-}
-
-.ia-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 6rem;
-  align-items: center;
-  margin-top: 3rem;
-}
-
+/* IA */
+.ia-section { background: rgba(29,158,117,0.03); border-top: 1px solid var(--border); }
+.ia-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; margin-top: 3rem; }
 .ia-visual {
-  position: relative;
-  height: 400px;
+  position: relative; height: 400px;
   border: 1px solid var(--teal-line);
   background: var(--teal-glow);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  display: flex; flex-direction: column;
+  justify-content: center; align-items: center;
   overflow: hidden;
 }
-
-.ia-central {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 1.4rem;
-  letter-spacing: 0.1em;
-  color: var(--teal);
-  text-align: center;
-  z-index: 2;
-  position: relative;
-}
-
-.ia-central span {
-  display: block;
-  font-family: 'DM Mono', monospace;
-  font-size: 9px;
-  letter-spacing: 0.2em;
-  color: var(--muted);
-  text-transform: uppercase;
-  margin-bottom: 0.5rem;
-}
-
-.ia-ring {
-  position: absolute;
-  border-radius: 50%;
-  border: 1px solid var(--teal-line);
-  animation: spin var(--dur, 20s) linear infinite;
-}
+.ia-central { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; letter-spacing: 0.1em; color: var(--teal); text-align: center; z-index: 2; position: relative; }
+.ia-central span { display: block; font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.2em; color: var(--muted); text-transform: uppercase; margin-bottom: 0.5rem; }
+.ia-ring { position: absolute; border-radius: 50%; border: 1px solid var(--teal-line); animation: spin var(--dur, 20s) linear infinite; }
 .ia-ring-1 { width: 200px; height: 200px; --dur: 25s; }
 .ia-ring-2 { width: 300px; height: 300px; --dur: 40s; animation-direction: reverse; }
 .ia-ring-3 { width: 400px; height: 400px; --dur: 55s; opacity: 0.4; }
+.ia-dot { position: absolute; width: 6px; height: 6px; border-radius: 50%; background: var(--teal); }
+.ia-items { display: flex; flex-direction: column; gap: 1.25rem; }
+.ia-item { display: flex; gap: 1.25rem; align-items: flex-start; padding: 1.25rem; border: 1px solid var(--border); transition: border-color 0.2s, background 0.2s; }
+.ia-item:hover { border-color: var(--teal-line); background: var(--teal-glow); }
+.ia-item-icon { font-family: 'DM Mono', monospace; font-size: 10px; font-weight: 500; color: var(--teal); border: 1px solid var(--teal-line); padding: 4px 8px; white-space: nowrap; letter-spacing: 0.1em; flex-shrink: 0; margin-top: 2px; }
+.ia-item-content strong { display: block; font-size: 0.9rem; font-weight: 500; color: var(--white); margin-bottom: 4px; }
+.ia-item-content p { font-size: 0.85rem; color: rgba(245,244,239,0.55); line-height: 1.55; }
 
-.ia-dot {
-  position: absolute;
-  width: 6px; height: 6px;
-  border-radius: 50%;
-  background: var(--teal);
-}
+/* MÓDULOS */
+.modulos-wrapper { display: grid; grid-template-columns: 1fr 2fr; gap: 6rem; align-items: start; }
+.modulos-nav { position: sticky; top: 6rem; display: flex; flex-direction: column; gap: 1px; }
+.mod-nav-item { padding: 1rem 1.25rem; border: 1px solid transparent; cursor: pointer; transition: all 0.2s; display: flex; align-items: center; gap: 1rem; }
+.mod-nav-item:hover, .mod-nav-item.active { border-color: var(--teal-line); background: var(--teal-glow); }
+.mod-nav-num { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--teal); font-weight: 500; }
+.mod-nav-label { font-size: 0.85rem; color: rgba(245,244,239,0.6); }
+.mod-nav-item.active .mod-nav-label { color: var(--white); }
+.mod-panel { display: none; }
+.mod-panel.active { display: block; }
+.mod-panel-title { font-family: 'Bebas Neue', sans-serif; font-size: 3.5rem; letter-spacing: 0.03em; color: var(--white); line-height: 1; margin-bottom: 1.5rem; }
+.mod-panel-desc { font-size: 1rem; color: rgba(245,244,239,0.6); line-height: 1.75; margin-bottom: 2.5rem; max-width: 560px; }
+.mod-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 2.5rem; }
+.mod-tag { font-family: 'DM Mono', monospace; font-size: 10px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; padding: 5px 12px; border: 1px solid var(--teal-line); color: var(--teal); background: var(--teal-glow); }
+.mod-entrega-title { font-family: 'DM Mono', monospace; font-size: 10px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem; }
+.mod-entrega-list { display: flex; flex-direction: column; gap: 8px; }
+.mod-entrega-item { display: flex; align-items: flex-start; gap: 1rem; font-size: 0.9rem; color: rgba(245,244,239,0.7); line-height: 1.5; padding: 0.875rem 1rem; border: 1px solid var(--border); }
+.mod-entrega-item::before { content: '→'; color: var(--teal); font-family: 'DM Mono', monospace; font-size: 12px; flex-shrink: 0; margin-top: 1px; }
 
-.ia-items {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-}
-.ia-item {
-  display: flex;
-  gap: 1.25rem;
-  align-items: flex-start;
-  padding: 1.25rem;
-  border: 1px solid var(--border);
-  transition: border-color 0.2s, background 0.2s;
-}
-.ia-item:hover {
-  border-color: var(--teal-line);
-  background: var(--teal-glow);
-}
-.ia-item-icon {
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
-  font-weight: 500;
-  color: var(--teal);
-  border: 1px solid var(--teal-line);
-  padding: 4px 8px;
-  white-space: nowrap;
-  letter-spacing: 0.1em;
-  flex-shrink: 0;
-  margin-top: 2px;
-}
-.ia-item-content strong {
-  display: block;
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: var(--white);
-  margin-bottom: 4px;
-}
-.ia-item-content p {
-  font-size: 0.85rem;
-  color: rgba(245,244,239,0.55);
-  line-height: 1.55;
-}
+/* ROI */
+.roi-section { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.roi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border); margin-top: 4rem; border: 1px solid var(--border); }
+.roi-card { background: var(--black); padding: 2.5rem; transition: background 0.2s; }
+.roi-card:hover { background: var(--card-bg); }
+.roi-val { font-family: 'Bebas Neue', sans-serif; font-size: 3rem; color: var(--teal); line-height: 1; margin-bottom: 0.5rem; }
+.roi-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.75rem; }
+.roi-desc { font-size: 0.85rem; color: rgba(245,244,239,0.5); line-height: 1.5; }
+.roi-formula { margin-top: 2rem; padding: 2.5rem; border: 1px solid var(--teal-line); background: var(--teal-glow); display: grid; grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr; gap: 0; align-items: center; }
+.rf-item { text-align: center; padding: 1rem; }
+.rf-val { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; color: var(--white); line-height: 1; margin-bottom: 4px; }
+.rf-label { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); }
+.rf-op { font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; color: var(--muted); text-align: center; padding: 0 0.5rem; }
 
-/* CTA FINAL */
-.cta-section {
-  text-align: center;
-  padding: 10rem 4rem;
-  position: relative;
-  overflow: hidden;
-}
+/* EXECUÇÃO */
+.exec-timeline { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 4rem; border: 1px solid var(--border); }
+.exec-step { padding: 2rem; border-right: 1px solid var(--border); position: relative; }
+.exec-step:last-child { border-right: none; }
+.exec-step::after { content: '→'; position: absolute; right: -12px; top: 50%; transform: translateY(-50%); color: var(--teal); font-family: 'DM Mono', monospace; font-size: 14px; z-index: 2; background: var(--black); padding: 4px 2px; }
+.exec-step:last-child::after { display: none; }
+.exec-phase { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.75rem; }
+.exec-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; color: var(--white); line-height: 1; margin-bottom: 0.75rem; }
+.exec-items { font-size: 0.82rem; color: rgba(245,244,239,0.5); line-height: 1.7; }
 
-.cta-section::before {
-  content: '';
-  position: absolute;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  width: 800px; height: 800px;
-  background: radial-gradient(circle, rgba(29,158,117,0.1) 0%, transparent 65%);
-  pointer-events: none;
-}
+/* ENTREGÁVEIS */
+.entregaveis-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--border); margin-top: 4rem; border: 1px solid var(--border); }
+.ent-card { background: var(--black); padding: 2.5rem; transition: background 0.3s; }
+.ent-card:hover { background: var(--card-bg); }
+.ent-card.featured { border-top: 2px solid var(--teal); }
+.ent-who { font-family: 'DM Mono', monospace; font-size: 10px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--teal); margin-bottom: 1rem; }
+.ent-title { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 0.04em; color: var(--white); line-height: 1; margin-bottom: 1rem; }
+.ent-desc { font-size: 0.9rem; color: rgba(245,244,239,0.55); line-height: 1.65; }
 
-.cta-pre {
-  font-family: 'DM Mono', monospace;
-  font-size: 11px;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  color: var(--teal);
-  margin-bottom: 2rem;
-}
-
-.cta-title {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: clamp(4rem, 9vw, 8rem);
-  line-height: 0.92;
-  letter-spacing: 0.02em;
-  color: var(--white);
-  margin-bottom: 2rem;
-  position: relative;
-  z-index: 1;
-}
-
-.cta-sub {
-  font-size: 1rem;
-  color: rgba(245,244,239,0.55);
-  max-width: 500px;
-  margin: 0 auto 3rem;
-  line-height: 1.7;
-}
-
-.cta-form {
-  display: flex;
-  gap: 0;
-  max-width: 480px;
-  margin: 0 auto 1.5rem;
-  position: relative;
-  z-index: 1;
-}
-.cta-form input {
-  flex: 1;
-  background: rgba(245,244,239,0.05);
-  border: 1px solid var(--border);
-  border-right: none;
-  padding: 1rem 1.5rem;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.9rem;
-  color: var(--white);
-  outline: none;
-  transition: border-color 0.2s;
-}
-.cta-form input::placeholder { color: var(--muted); }
-.cta-form input:focus { border-color: var(--teal-line); }
-.cta-form button {
-  background: var(--teal);
-  color: var(--black);
-  border: none;
-  padding: 1rem 2rem;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.85rem;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: background 0.2s;
-  white-space: nowrap;
-}
-.cta-form button:hover { background: #25c48f; }
-
-.cta-fine {
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
-  letter-spacing: 0.12em;
-  color: var(--muted);
-  text-transform: uppercase;
-}
+/* CTA */
+.cta-section { text-align: center; padding: 10rem 4rem; position: relative; overflow: hidden; }
+.cta-section::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 800px; height: 800px; background: radial-gradient(circle, rgba(29,158,117,0.1) 0%, transparent 65%); pointer-events: none; }
+.cta-pre { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--teal); margin-bottom: 2rem; }
+.cta-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(4rem, 9vw, 8rem); line-height: 0.92; letter-spacing: 0.02em; color: var(--white); margin-bottom: 2rem; position: relative; z-index: 1; }
+.cta-sub { font-size: 1rem; color: rgba(245,244,239,0.55); max-width: 500px; margin: 0 auto 3rem; line-height: 1.7; }
+.cta-fine { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.12em; color: var(--muted); text-transform: uppercase; margin-top: 1.5rem; }
 
 /* FOOTER */
-footer {
-  border-top: 1px solid var(--border);
-  padding: 2.5rem 4rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: relative;
-  z-index: 1;
-}
-.footer-logo {
-  font-family: 'DM Mono', monospace;
-  font-size: 11px;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-.footer-link {
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--muted);
-  text-decoration: none;
-  transition: color 0.2s;
-}
+footer { border-top: 1px solid var(--border); padding: 2.5rem 4rem; display: flex; align-items: center; justify-content: space-between; position: relative; z-index: 1; }
+.footer-logo { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); }
+.footer-link { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
 .footer-link:hover { color: var(--teal); }
 
 /* ANIMATIONS */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(24px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-@keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-/* SCROLL REVEAL */
-.reveal {
-  opacity: 0;
-  transform: translateY(32px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
-}
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+@keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+.reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
 .reveal-delay-1 { transition-delay: 0.1s; }
 .reveal-delay-2 { transition-delay: 0.2s; }
 .reveal-delay-3 { transition-delay: 0.3s; }
-
-/* SUCCESS STATE */
-.form-success {
-  display: none;
-  font-family: 'DM Mono', monospace;
-  font-size: 13px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--teal);
-  padding: 1rem 2rem;
-  border: 1px solid var(--teal-line);
-  background: var(--teal-glow);
-  max-width: 480px;
-  margin: 0 auto;
-}
 </style>
 </head>
 <body>
 
 <nav>
   <div class="nav-logo">Performance Máxima</div>
-  <a href="#agendar" class="nav-cta">Quero o diagnóstico</a>
+  <a href="https://wa.me/5541988488209?text=Ol%C3%A1%2C%20quero%20saber%20quanto%20minha%20rede%20est%C3%A1%20perdendo.%20Tenho%20interesse%20no%20Growth%20Audit%20IA." target="_blank" class="nav-cta">Quero o diagnóstico</a>
 </nav>
 
 <!-- HERO -->
@@ -995,7 +461,7 @@ footer {
   </p>
 
   <div class="hero-actions">
-    <a href="#agendar" class="btn-primary">
+    <a href="https://wa.me/5541988488209?text=Ol%C3%A1%2C%20quero%20saber%20quanto%20minha%20rede%20est%C3%A1%20perdendo.%20Tenho%20interesse%20no%20Growth%20Audit%20IA." target="_blank" class="btn-primary">
       Quero saber quanto estou perdendo
       <span class="arrow">→</span>
     </a>
@@ -1037,44 +503,29 @@ footer {
     <div class="loss-list reveal reveal-delay-1">
       <div class="loss-item">
         <div class="loss-num">01</div>
-        <div class="loss-text">
-          <strong>Gargalo de liderança</strong>
-          Gerente que vende em vez de liderar. Conversão sobe quando ele está, cai quando vai embora.
-        </div>
+        <div class="loss-text"><strong>Gargalo de liderança</strong>Gerente que vende em vez de liderar. Conversão sobe quando ele está, cai quando vai embora.</div>
       </div>
       <div class="loss-item">
         <div class="loss-num">02</div>
-        <div class="loss-text">
-          <strong>Conhecimento desigual</strong>
-          O melhor vendedor converte 40% acima da média. Esse conhecimento vive na cabeça dele — e vai embora quando ele sai.
-        </div>
+        <div class="loss-text"><strong>Conhecimento desigual</strong>O melhor vendedor converte 40% acima da média. Esse conhecimento vive na cabeça dele — e vai embora quando ele sai.</div>
       </div>
       <div class="loss-item">
         <div class="loss-num">03</div>
-        <div class="loss-text">
-          <strong>Ramp-up de 4 meses</strong>
-          Cada troca de vendedor custa 4 meses de produtividade abaixo do potencial. Em rede com alto turnover, isso nunca para.
-        </div>
+        <div class="loss-text"><strong>Ramp-up de 4 meses</strong>Cada troca de vendedor custa 4 meses de produtividade abaixo do potencial. Em rede com alto turnover, isso nunca para.</div>
       </div>
       <div class="loss-item">
         <div class="loss-num">04</div>
-        <div class="loss-text">
-          <strong>Clareza zero na ponta</strong>
-          O CEO sabe a meta. O gerente sabe a meta. O vendedor que atende o cliente agora? Não faz ideia.
-        </div>
+        <div class="loss-text"><strong>Clareza zero na ponta</strong>O CEO sabe a meta. O gerente sabe a meta. O vendedor que atende o cliente agora? Não faz ideia.</div>
       </div>
       <div class="loss-item">
         <div class="loss-num">05</div>
-        <div class="loss-text">
-          <strong>IA subutilizada</strong>
-          Você tem as ferramentas. Elas não estão no processo comercial onde deveriam estar — acelerando o humano.
-        </div>
+        <div class="loss-text"><strong>IA subutilizada</strong>Você tem as ferramentas. Elas não estão no processo comercial onde deveriam estar — acelerando o humano.</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SOLUÇÃO: 3 MOMENTOS -->
+<!-- 3 MOMENTOS -->
 <section id="como-funciona">
   <div class="section-label reveal">A solução</div>
   <h2 class="section-title reveal">Um diagnóstico que<br>vira decisão.</h2>
@@ -1091,40 +542,33 @@ footer {
       <div class="momento-num">Momento 02</div>
       <div class="momento-name">O diagnóstico</div>
       <div class="momento-emotion">Urgência</div>
-      <p class="momento-desc">Você entende por que está assim. Análise de processos, mapeamento de liderança, inventário de IA, forças competitivas — tudo como evidência de causa raiz, não como relatório acadêmico. A IA entra aqui como ferramenta de precisão.</p>
+      <p class="momento-desc">Você entende por que está assim. Análise de processos, mapeamento de liderança, inventário de IA, forças competitivas — tudo como evidência de causa raiz, não como relatório acadêmico.</p>
     </div>
     <div class="momento-card reveal reveal-delay-2">
       <div class="momento-num">Momento 03</div>
       <div class="momento-name">O caminho</div>
       <div class="momento-emotion">Clareza</div>
-      <p class="momento-desc">Você vê exatamente o que muda, como muda, em quanto tempo e com qual retorno. O plano de 90 dias com as duas faces: o que o humano faz diferente e o que a IA acelera. A proposta se apresenta sozinha.</p>
+      <p class="momento-desc">Você vê exatamente o que muda, como muda, em quanto tempo e com qual retorno. O plano de 90 dias com as duas faces: o que o humano faz diferente e o que a IA acelera.</p>
     </div>
   </div>
 </section>
 
-<!-- IA SECTION -->
+<!-- IA -->
 <section class="ia-section">
   <div class="section-label reveal">A diferença</div>
   <h2 class="section-title reveal">Inteligência híbrida.<br>Resultado real.</h2>
 
   <div class="ia-grid">
     <div class="ia-visual reveal">
-      <div class="ia-ring ia-ring-1">
-        <div class="ia-dot" style="top:0;left:50%;transform:translateX(-50%)"></div>
-      </div>
-      <div class="ia-ring ia-ring-2">
-        <div class="ia-dot" style="bottom:10px;right:20px"></div>
-      </div>
-      <div class="ia-ring ia-ring-3">
-        <div class="ia-dot" style="top:30px;left:10px"></div>
-      </div>
+      <div class="ia-ring ia-ring-1"><div class="ia-dot" style="top:0;left:50%;transform:translateX(-50%)"></div></div>
+      <div class="ia-ring ia-ring-2"><div class="ia-dot" style="bottom:10px;right:20px"></div></div>
+      <div class="ia-ring ia-ring-3"><div class="ia-dot" style="top:30px;left:10px"></div></div>
       <div class="ia-central">
         <span>Sistema híbrido</span>
         IA + HUMANO
         <span style="margin-top:0.5rem;margin-bottom:0">acelerando resultado</span>
       </div>
     </div>
-
     <div class="ia-items reveal reveal-delay-1">
       <div class="ia-item">
         <div class="ia-item-icon">IA</div>
@@ -1141,7 +585,7 @@ footer {
         </div>
       </div>
       <div class="ia-item">
-        <div class="ia-item-icon">Human</div>
+        <div class="ia-item-icon">Humano</div>
         <div class="ia-item-content">
           <strong>Liderança que a IA não substitui</strong>
           <p>A IA elimina o trabalho cognitivo de baixo valor do gerente para que ele tenha energia para o que só humano faz: observar, dar feedback, desenvolver pessoas.</p>
@@ -1159,63 +603,38 @@ footer {
 </section>
 
 <!-- MÓDULOS -->
-<section class="modulos" id="modulos">
+<section id="modulos" style="background:rgba(29,158,117,0.03)">
   <div class="section-label reveal">Os módulos</div>
   <h2 class="section-title reveal">8 módulos.<br>1 diagnóstico completo.</h2>
 
   <div class="modulos-wrapper">
     <div class="modulos-nav reveal">
-      <div class="mod-nav-item active" onclick="showMod(0)">
-        <span class="mod-nav-num">M1</span>
-        <span class="mod-nav-label">Análise de performance</span>
-      </div>
-      <div class="mod-nav-item" onclick="showMod(1)">
-        <span class="mod-nav-num">M2</span>
-        <span class="mod-nav-label">Análise de mercado</span>
-      </div>
-      <div class="mod-nav-item" onclick="showMod(2)">
-        <span class="mod-nav-num">M3</span>
-        <span class="mod-nav-label">Análise de processos</span>
-      </div>
-      <div class="mod-nav-item" onclick="showMod(3)">
-        <span class="mod-nav-num">M4</span>
-        <span class="mod-nav-label">Inventário de IA</span>
-      </div>
-      <div class="mod-nav-item" onclick="showMod(4)">
-        <span class="mod-nav-num">M5</span>
-        <span class="mod-nav-label">Scorecard de maturidade</span>
-      </div>
-      <div class="mod-nav-item" onclick="showMod(5)">
-        <span class="mod-nav-num">M6</span>
-        <span class="mod-nav-label">Mapa de ROI</span>
-      </div>
-      <div class="mod-nav-item" onclick="showMod(6)">
-        <span class="mod-nav-num">M7</span>
-        <span class="mod-nav-label">Plano de aceleração</span>
-      </div>
-      <div class="mod-nav-item" onclick="showMod(7)">
-        <span class="mod-nav-num">M8</span>
-        <span class="mod-nav-label">Proposta integrada</span>
-      </div>
+      <div class="mod-nav-item active" onclick="showMod(0)"><span class="mod-nav-num">M1</span><span class="mod-nav-label">Análise de performance</span></div>
+      <div class="mod-nav-item" onclick="showMod(1)"><span class="mod-nav-num">M2</span><span class="mod-nav-label">Análise de mercado</span></div>
+      <div class="mod-nav-item" onclick="showMod(2)"><span class="mod-nav-num">M3</span><span class="mod-nav-label">Análise de processos</span></div>
+      <div class="mod-nav-item" onclick="showMod(3)"><span class="mod-nav-num">M4</span><span class="mod-nav-label">Inventário de IA</span></div>
+      <div class="mod-nav-item" onclick="showMod(4)"><span class="mod-nav-num">M5</span><span class="mod-nav-label">Scorecard de maturidade</span></div>
+      <div class="mod-nav-item" onclick="showMod(5)"><span class="mod-nav-num">M6</span><span class="mod-nav-label">Mapa de ROI</span></div>
+      <div class="mod-nav-item" onclick="showMod(6)"><span class="mod-nav-num">M7</span><span class="mod-nav-label">Plano de aceleração</span></div>
+      <div class="mod-nav-item" onclick="showMod(7)"><span class="mod-nav-num">M8</span><span class="mod-nav-label">Proposta integrada</span></div>
     </div>
 
-    <div class="modulos-content reveal reveal-delay-1" id="mod-panels">
+    <div class="modulos-content reveal reveal-delay-1">
       <div class="mod-panel active">
         <div class="mod-panel-title">Análise de performance</div>
         <p class="mod-panel-desc">Mapeia onde sua rede está hoje versus onde poderia estar. Calculamos as distâncias de performance entre lojas e quantificamos o potencial de receita não capturado — em R$, não em percentual.</p>
-        <div class="mod-tags"><span class="mod-tag">TAM · SAM · SOM</span><span class="mod-tag">Gap de conversão</span><span class="mod-tag">Análise de ticket</span><span class="mod-tag">Curva de performance</span><span class="mod-tag">Benchmarking interno</span></div>
+        <div class="mod-tags"><span class="mod-tag">TAM · SAM · SOM</span><span class="mod-tag">Gap de conversão</span><span class="mod-tag">Análise de ticket</span><span class="mod-tag">Benchmarking interno</span></div>
         <div class="mod-entrega-title">Entregáveis</div>
         <div class="mod-entrega-list">
-          <div class="mod-entrega-item">Scorecard de maturidade comercial: posicionamento vs. benchmark do setor em 7 dimensões</div>
+          <div class="mod-entrega-item">Scorecard de maturidade: posicionamento vs. benchmark do setor em 7 dimensões</div>
           <div class="mod-entrega-item">Mapa de oportunidade: R$ deixados na mesa por gargalo identificado</div>
-          <div class="mod-entrega-item">Ranking de lojas por potencial de aceleração — não só por faturamento atual</div>
+          <div class="mod-entrega-item">Ranking de lojas por potencial de aceleração</div>
         </div>
       </div>
-
       <div class="mod-panel">
         <div class="mod-panel-title">Análise de mercado</div>
-        <p class="mod-panel-desc">Posiciona sua rede no ecossistema competitivo. SWOT, 5 Forças de Porter, PESTEL e matriz competitiva — não como seções de relatório acadêmico, mas como evidências do diagnóstico.</p>
-        <div class="mod-tags"><span class="mod-tag">SWOT estratégico</span><span class="mod-tag">5 Forças de Porter</span><span class="mod-tag">PESTEL</span><span class="mod-tag">Matriz competitiva</span><span class="mod-tag">Personas de compra</span></div>
+        <p class="mod-panel-desc">Posiciona sua rede no ecossistema competitivo. SWOT, 5 Forças de Porter, PESTEL e matriz competitiva — como evidências do diagnóstico, não seções de relatório acadêmico.</p>
+        <div class="mod-tags"><span class="mod-tag">SWOT estratégico</span><span class="mod-tag">5 Forças de Porter</span><span class="mod-tag">PESTEL</span><span class="mod-tag">Matriz competitiva</span><span class="mod-tag">Personas</span></div>
         <div class="mod-entrega-title">Entregáveis</div>
         <div class="mod-entrega-list">
           <div class="mod-entrega-item">Mapa de posicionamento: sua rede vs. concorrentes nas 2 dimensões mais relevantes</div>
@@ -1223,33 +642,30 @@ footer {
           <div class="mod-entrega-item">Personas de compra com implicações diretas para o processo comercial</div>
         </div>
       </div>
-
       <div class="mod-panel">
         <div class="mod-panel-title">Análise de processos</div>
-        <p class="mod-panel-desc">Mapeamos o processo comercial atual — da abordagem ao pós-venda — com observação de campo nas suas lojas. Identificamos onde a execução vaza e quanto isso custa.</p>
+        <p class="mod-panel-desc">Mapeamos o processo comercial atual com observação de campo nas suas lojas. Identificamos onde a execução vaza e quanto isso custa em receita e margem.</p>
         <div class="mod-tags"><span class="mod-tag">Observação de campo</span><span class="mod-tag">Jornada de venda</span><span class="mod-tag">Rituais de gestão</span><span class="mod-tag">Diagnóstico de liderança</span></div>
         <div class="mod-entrega-title">Entregáveis</div>
         <div class="mod-entrega-list">
-          <div class="mod-entrega-item">Fluxo do processo comercial atual com pontos de perda identificados por etapa</div>
-          <div class="mod-entrega-item">Diagnóstico de liderança: % do tempo do gerente em liderança vs. operação</div>
-          <div class="mod-entrega-item">Índice de consistência: variação de processo entre as lojas visitadas</div>
+          <div class="mod-entrega-item">Fluxo do processo comercial com pontos de perda por etapa</div>
+          <div class="mod-entrega-item">Diagnóstico de liderança: % do tempo do gerente em desenvolvimento vs. operação</div>
+          <div class="mod-entrega-item">Índice de consistência entre as lojas visitadas</div>
         </div>
       </div>
-
       <div class="mod-panel">
         <div class="mod-panel-title">Inventário de IA</div>
-        <p class="mod-panel-desc">Mapeamos quais ferramentas de IA a rede já usa — e se estão sendo usadas do jeito certo. Identificamos onde a IA poderia acelerar o resultado mas ainda não foi aplicada.</p>
+        <p class="mod-panel-desc">Mapeamos quais ferramentas de IA a rede já usa e se estão sendo usadas do jeito certo. Identificamos onde a IA poderia acelerar o resultado mas ainda não foi aplicada.</p>
         <div class="mod-tags"><span class="mod-tag">Ferramentas ativas</span><span class="mod-tag">Maturidade de uso</span><span class="mod-tag">Gaps de automação</span><span class="mod-tag">Custo cognitivo</span></div>
         <div class="mod-entrega-title">Entregáveis</div>
         <div class="mod-entrega-list">
           <div class="mod-entrega-item">Matriz de maturidade digital: ferramentas vs. nível de adoção real</div>
-          <div class="mod-entrega-item">Mapa de oportunidades de IA por processo: onde a IA libera o humano para liderar</div>
+          <div class="mod-entrega-item">Mapa de oportunidades de IA por processo comercial</div>
         </div>
       </div>
-
       <div class="mod-panel">
         <div class="mod-panel-title">Scorecard de maturidade</div>
-        <p class="mod-panel-desc">Visualização executiva que posiciona sua rede em 7 dimensões comerciais vs. benchmark do setor. O CEO vê instantaneamente onde está forte, onde está fraco e onde está a maior oportunidade.</p>
+        <p class="mod-panel-desc">Visualização executiva em 7 dimensões comerciais vs. benchmark do setor. O CEO vê instantaneamente onde está forte, onde está fraco e onde está a maior oportunidade de resultado.</p>
         <div class="mod-tags"><span class="mod-tag">Liderança comercial</span><span class="mod-tag">Consistência de processo</span><span class="mod-tag">Velocidade de ramp-up</span><span class="mod-tag">Retenção</span><span class="mod-tag">Escalabilidade</span></div>
         <div class="mod-entrega-title">Entregáveis</div>
         <div class="mod-entrega-list">
@@ -1257,10 +673,9 @@ footer {
           <div class="mod-entrega-item">Top 3 dimensões com maior impacto potencial em ticket e conversão</div>
         </div>
       </div>
-
       <div class="mod-panel">
         <div class="mod-panel-title">Mapa de ROI</div>
-        <p class="mod-panel-desc">Quantificamos o impacto financeiro dos gargalos identificados. Você vê quanto está perdendo hoje — e projeta o retorno de resolver cada um. O investimento na Arquitetura Anual se apresenta sozinho.</p>
+        <p class="mod-panel-desc">Quantificamos o impacto financeiro dos gargalos identificados com os dados reais da sua rede. Você vê quanto está perdendo hoje — e projeta o retorno de resolver cada gargalo.</p>
         <div class="mod-tags"><span class="mod-tag">Receita não capturada</span><span class="mod-tag">Custo de turnover</span><span class="mod-tag">Perda por ramp-up</span><span class="mod-tag">ROI projetado</span></div>
         <div class="mod-entrega-title">Entregáveis</div>
         <div class="mod-entrega-list">
@@ -1268,7 +683,6 @@ footer {
           <div class="mod-entrega-item">Projeção em 3 cenários: conservador, realista e otimista</div>
         </div>
       </div>
-
       <div class="mod-panel">
         <div class="mod-panel-title">Plano de aceleração</div>
         <p class="mod-panel-desc">Para cada gargalo identificado, a intervenção com as duas faces: o que muda no comportamento humano e o que a IA acelera. Foco em aumentar ticket médio e conversão de forma sustentável.</p>
@@ -1280,15 +694,14 @@ footer {
           <div class="mod-entrega-item">Narrativa de ticket: como cada ação aumenta o ticket médio especificamente</div>
         </div>
       </div>
-
       <div class="mod-panel">
         <div class="mod-panel-title">Proposta integrada</div>
-        <p class="mod-panel-desc">Não é um pitch de venda separado. É a conclusão natural do diagnóstico. O CEO já viu o problema, entendeu a causa e viu o caminho — a proposta de implementação aparece como o próximo passo óbvio.</p>
+        <p class="mod-panel-desc">Não é um pitch separado. É a conclusão natural do diagnóstico. O CEO já viu o problema, entendeu a causa e viu o caminho — a proposta aparece como o próximo passo óbvio.</p>
         <div class="mod-tags"><span class="mod-tag">PRI — Plano de Recuperação</span><span class="mod-tag">Cronograma</span><span class="mod-tag">Métricas acordadas</span></div>
         <div class="mod-entrega-title">Entregáveis</div>
         <div class="mod-entrega-list">
           <div class="mod-entrega-item">Proposta comercial conectada aos dados do diagnóstico da sua rede</div>
-          <div class="mod-entrega-item">PRI: demonstração de como o investimento se paga nos primeiros 90 dias</div>
+          <div class="mod-entrega-item">PRI: como o investimento se paga nos primeiros 90 dias</div>
         </div>
       </div>
     </div>
@@ -1299,7 +712,7 @@ footer {
 <section class="roi-section">
   <div class="section-label reveal">O número que importa</div>
   <h2 class="section-title reveal">Quanto custa<br>não saber.</h2>
-  <p class="reveal" style="color:rgba(245,244,239,0.55);max-width:520px;font-size:1rem;line-height:1.75;">Para uma rede de R$50M/ano com os gargalos mais comuns que encontramos no varejo.</p>
+  <p class="reveal" style="color:rgba(245,244,239,0.55);max-width:520px;font-size:1rem;line-height:1.75;">Para uma rede de R$50M/ano com os gargalos mais comuns que encontramos no varejo brasileiro.</p>
 
   <div class="roi-grid">
     <div class="roi-card reveal">
@@ -1324,26 +737,14 @@ footer {
     </div>
   </div>
 
-  <div class="roi-formula reveal" style="margin-top:2rem">
-    <div class="rf-item">
-      <div class="rf-val">R$ 2M+</div>
-      <div class="rf-label">Vazamento total</div>
-    </div>
+  <div class="roi-formula reveal">
+    <div class="rf-item"><div class="rf-val">R$ 2M+</div><div class="rf-label">Vazamento total</div></div>
     <div class="rf-op">−</div>
-    <div class="rf-item">
-      <div class="rf-val">R$ 192k</div>
-      <div class="rf-label">Investimento</div>
-    </div>
+    <div class="rf-item"><div class="rf-val">R$ 192k</div><div class="rf-label">Investimento</div></div>
     <div class="rf-op">=</div>
-    <div class="rf-item">
-      <div class="rf-val">R$ 1,8M+</div>
-      <div class="rf-label">Retorno líquido</div>
-    </div>
+    <div class="rf-item"><div class="rf-val">R$ 1,8M+</div><div class="rf-label">Retorno líquido</div></div>
     <div class="rf-op">em</div>
-    <div class="rf-item">
-      <div class="rf-val">12 meses</div>
-      <div class="rf-label">de implementação</div>
-    </div>
+    <div class="rf-item"><div class="rf-val">12 meses</div><div class="rf-label">de implementação</div></div>
   </div>
 </section>
 
@@ -1356,7 +757,7 @@ footer {
     <div class="exec-step">
       <div class="exec-phase">Semana anterior</div>
       <div class="exec-title">Coleta remota</div>
-      <div class="exec-items">Você envia os dados financeiros e KPIs da rede. Analisamos tudo antes de chegar — nenhum minuto do seu dia é desperdiçado em descoberta básica.</div>
+      <div class="exec-items">Você envia os dados financeiros e KPIs da rede. Analisamos tudo antes de chegar — nenhum minuto seu é desperdiçado em descoberta básica.</div>
     </div>
     <div class="exec-step">
       <div class="exec-phase">Dia presencial — manhã</div>
@@ -1371,7 +772,7 @@ footer {
     <div class="exec-step">
       <div class="exec-phase">48h depois</div>
       <div class="exec-title">Entregáveis</div>
-      <div class="exec-items">PDF executivo, planilha de dados com premissas editáveis, plano de ação 90 dias e proposta comercial integrada.</div>
+      <div class="exec-items">PDF executivo, planilha de dados, plano de ação 90 dias e proposta comercial integrada. Tudo conectado ao que foi encontrado na sua rede.</div>
     </div>
   </div>
 </section>
@@ -1390,7 +791,7 @@ footer {
     <div class="ent-card featured reveal reveal-delay-1">
       <div class="ent-who">Para CEO e Diretores</div>
       <div class="ent-title">Plano de ação 90 dias</div>
-      <div class="ent-desc">Cronograma semanal das intervenções com responsáveis, indicadores de sucesso e marcos de 30/60/90 dias. A face humana e a face IA de cada ação. Pronto para execução no dia seguinte à apresentação.</div>
+      <div class="ent-desc">Cronograma semanal com responsáveis, indicadores de sucesso e marcos de 30/60/90 dias. A face humana e a face IA de cada ação. Pronto para execução no dia seguinte à apresentação.</div>
     </div>
     <div class="ent-card reveal reveal-delay-2">
       <div class="ent-who">Para o time de dados</div>
@@ -1400,24 +801,23 @@ footer {
     <div class="ent-card reveal reveal-delay-3">
       <div class="ent-who">Para fechamento</div>
       <div class="ent-title">Proposta comercial</div>
-      <div class="ent-desc">Proposta formal da Arquitetura Anual com PRI, cronograma e condições. Já conectada aos gargalos identificados no seu diagnóstico — não é um template genérico.</div>
+      <div class="ent-desc">Proposta formal da Arquitetura Anual com PRI, cronograma e condições. Conectada aos gargalos identificados no seu diagnóstico — não um template genérico.</div>
     </div>
   </div>
 </section>
 
-<!-- CTA -->
+<!-- CTA FINAL -->
 <section class="cta-section" id="agendar">
   <div class="cta-pre">Próximo passo</div>
   <h2 class="cta-title">Agende seu<br>diagnóstico.</h2>
-  <p class="cta-sub">Deixe seu e-mail e nosso time entra em contato em até 24 horas para agendar a sessão de briefing inicial — sem compromisso.</p>
+  <p class="cta-sub">Fale agora com nossa equipe pelo WhatsApp e descubra quanto sua rede está deixando na mesa. Atendemos exclusivamente redes com faturamento acima de R$50M/ano.</p>
 
-  <div class="cta-form" id="cta-form">
-    <input type="email" placeholder="seu@email.com" id="email-input">
-    <button onclick="submitForm()">Quero o diagnóstico →</button>
-  </div>
-  <div class="form-success" id="form-success">
-    Recebemos seu contato. Nossa equipe fala com você em até 24h.
-  </div>
+  <a href="https://wa.me/5541988488209?text=Ol%C3%A1%2C%20quero%20saber%20quanto%20minha%20rede%20est%C3%A1%20perdendo.%20Tenho%20interesse%20no%20Growth%20Audit%20IA." 
+     target="_blank"
+     class="btn-primary" style="display:inline-flex;margin:0 auto;">
+    Falar agora no WhatsApp <span class="arrow">→</span>
+  </a>
+
   <div class="cta-fine">Diagnóstico exclusivo para redes com faturamento acima de R$50M/ano</div>
 </section>
 
@@ -1428,33 +828,21 @@ footer {
 
 <script>
 function showMod(index) {
-  document.querySelectorAll('.mod-nav-item').forEach((el, i) => {
+  document.querySelectorAll('.mod-nav-item').forEach(function(el, i) {
     el.classList.toggle('active', i === index);
   });
-  document.querySelectorAll('.mod-panel').forEach((el, i) => {
+  document.querySelectorAll('.mod-panel').forEach(function(el, i) {
     el.classList.toggle('active', i === index);
   });
 }
 
-function submitForm() {
-  const email = document.getElementById('email-input').value;
-  if (!email || !email.includes('@')) {
-    document.getElementById('email-input').style.borderColor = '#E24B4A';
-    return;
-  }
-  document.getElementById('cta-form').style.display = 'none';
-  document.getElementById('form-success').style.display = 'block';
-}
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
   });
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
 </script>
 </body>
 </html>
